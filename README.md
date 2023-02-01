@@ -18,5 +18,6 @@ pip install -r requirements.txt
 python3 manage.py runserver
 ```
 
-### Author
+### Authors
+Yandex Practicum
 Kirill Koovshinov

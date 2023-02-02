@@ -25,8 +25,7 @@ SECRET_KEY = 'd*!h$_en*r)xd+zmsi^od#=+-66#(z$@_c!)s)@kh@sm(%(j!#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []  # type: ignore[var-annotated]
-
+ALLOWED_HOSTS = ['127.0.0.1', 'yandex.ru', 'glosso.ru', ]
 
 # Application definition
 

@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'yandex.ru', 'glosso.ru', ]
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -111,7 +112,7 @@ LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Europe/Moscow'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_L10N = True
 

@@ -9,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     # Add a field for post text search
     search_fields = ('text',)
     # Add a field to filter by pub date
-    list_filter = ('pub_date',)
+    list_filter = ('pub_date', 'group',)
     # Add a filler for blank values
     empty_value_display = '-empty-'
 

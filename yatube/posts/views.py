@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from .models import Post
+from django.shortcuts import get_object_or_404, render
+from .models import Group, Post
 
 
 def index(request):
     template = 'posts/index.html'
-    title = 'Это главная страница проекта Yatube'
+    title = 'Yatube'
     # Одна строка вместо тысячи слов на SQL:
     # в переменную posts будет сохранена выборка из 10 объектов модели Post,
     # отсортированных по полю pub_date по убыванию (от больших значений к
@@ -18,9 +18,16 @@ def index(request):
     return render(request, template, context)
 
 
-def group_posts(request):
+def group_posts(request, slug):
     # return HttpResponse(f'Посты, отфильтрованные по группам: {slug}')
     template = 'posts/group_list.html'
-    title = 'Здесь будет информация о группах проекта Yatube'
-    context = {'title': title, }
+    group = get_object_or_404(Group, slug=slug)
+    title = f'Yatube {group.title} posts'
+    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
+    context = {
+        'title': title,
+        'group': group,
+        'posts': posts,
+    }
+
     return render(request, template, context)

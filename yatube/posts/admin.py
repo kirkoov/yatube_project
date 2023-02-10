@@ -5,6 +5,8 @@ from .models import Group, Post
 class PostAdmin(admin.ModelAdmin):
     # View the post fields dispayable for the admin
     list_display = ('pk', 'text', 'pub_date', 'author', 'group',)
+    # Чтобы зменить поле group в любом посте без лишних движений мышкой,
+    # прямо из списка постов
     list_editable = ('group',)
     # Add a field for post text search
     search_fields = ('text',)

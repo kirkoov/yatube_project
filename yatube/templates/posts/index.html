@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="container py-5">
-    <h1>Latest site updates</h1>
+    <h1>Latest posts</h1>
     <article>
       {% for post in posts %}
         <ul>
@@ -14,7 +14,10 @@
           </li>
         </ul>
         <p>{{ post.text }}</p>
-        <a href="{% url 'posts:group_list' %}">More posts by this group</a>
+        {% if post.group %}
+        <a href="{% url 'posts:group_list' post.group.slug %}">More posts in {{ post.group.title }} group</a>
+        {% endif %}
+
         <!-- под последним постом нет линии -->
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}

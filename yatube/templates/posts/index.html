@@ -15,9 +15,9 @@
         </ul>
         <p>{{ post.text }}</p>
         {% if post.group %}
-        <a href="{% url 'posts:group_list' post.group.slug %}">More posts in {{ post.group.title }} group</a>
+          <a href="{% url 'posts:group_list' post.group.slug %}">
+          Read more in {{ post.group.title }} group</a>
         {% endif %}
-
         <!-- под последним постом нет линии -->
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}

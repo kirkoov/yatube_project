@@ -10,11 +10,11 @@
             Author: {{ post.author.get_full_name }}
           </li>
           <li>
-            Date published: {{ post.pub_date|date:"d E Y" }}
+            Published on: {{ post.pub_date|date:"d E Y" }}
           </li>
         </ul>
         <p>{{ post.text }}</p>
-        <a href="{% url 'posts:group_list' %}">Read all group's posts</a>
+        <a href="{% url 'posts:group_list' %}">More posts by this group</a>
         <!-- под последним постом нет линии -->
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}
